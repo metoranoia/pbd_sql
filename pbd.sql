@@ -62,3 +62,19 @@ SUM (jmlhalaman) total_jml_halaman,
 ROUND (AVG (jmlhalaman)) rata_jml_halaman
 FROM tblbuku
 GROUP BY pengarang;
+
+-- insert into values (menambah record tabel)
+insert into tblbuku(idbuku,judulbuku,pengarang,penerbit,tahunterbit,jmlhalaman) 
+values
+('STK012','Satysashf HHKhkjkdjfi','Victoria','lalaland','2022','534'),
+('STK013','Satysashf HHKhkjkdjfi','Victoria','lalaland','2021','533'),
+('STK014','Satysashf HHKhkjkdjfi','Victoria','lalaland','2020','539'),
+('STK015','Satysashf HHKhkjkdjfi','Victoria','lalaland','2023','512');
+-- menghapus record tabel
+delete from tblbuku where idbuku='STK014';
+-- update record tabel
+update tblbuku
+set jmlhalaman ='163'
+where idbuku = 'STK013';
+-- export data ke excel atau sql atau apapun
+select * from tblbuku into outfile "D:/List Buku.sql"
